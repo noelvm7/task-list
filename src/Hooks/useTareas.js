@@ -23,12 +23,7 @@ function useTareas() {
       window.alert("Error: texto largo o nulo");
     }
   };
-  const editarTarea = (index, texto) => {
-    const tareasActualizadas = [...tareas];
-    tareasActualizadas[index].texto = texto;
-    setTareas(tareasActualizadas);
-    setTareaEditada(null); // Finaliza la edición
-  };
+
   const controlarAlternarCompletada = (index) => {
     const tareasActualizadas = [...tareas];
     tareasActualizadas[index].completada =
@@ -57,7 +52,6 @@ function useTareas() {
     tareas,
     nuevaTarea,
     setNuevaTarea,
-    editarTarea,
     controlarAgregarTarea,
     controlarAlternarCompletada,
     controlarEliminarTarea,

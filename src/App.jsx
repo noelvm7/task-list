@@ -7,7 +7,7 @@ import useTareas from "./Hooks/useTareas";
 
 function App() {
   const {
-    tareas,nuevaTarea,setNuevaTarea, editarTarea,
+    tareas,nuevaTarea,setNuevaTarea,
     controlarAgregarTarea,controlarAlternarCompletada,
     controlarEliminarTarea,limpiarTodasLasTareas,
   } = useTareas();
