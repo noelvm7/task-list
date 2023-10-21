@@ -1,41 +1,54 @@
+
+
+body {
+  background-color: rgb(173, 172, 172); /* Establece el fondo claro */
+  color: rgb(9, 9, 8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+
+}
+
 .contenedor0 /*secciones del cuadro*/
 {
-  display: grid;
-  grid-template-columns: 360px 620px 360px;
-  grid-template-rows: 120px auto 120px ;
-  grid-area: 200px;
-  align-content: auto;
+  align-content: center;
   justify-content: stretch; /*vertical*/
-  align-items: start;
+  align-items: center;
   justify-items: justify ;
   grid-gap: 2px;
-  padding: 0.1rem; 
-  background-color: rgb(12, 23, 43);
+  padding: 1rem; 
   flex-wrap: wrap;
+  color: rgb(232, 232, 13);
 }
 
 .titulo { /* cuandro del titulo lista TO-DO*/
+  
   display: flex;
   font-size: 50px;
   align-items: center; /*vertical*/
   justify-content: center; /*Horizontal*/
   Font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
-  background-color:darkslategrey;
+  
   color: rgb(218, 138, 47);
   border: 5px;
   border-radius: 7%;
-  border-color: aqua;
-  border-style: dotted;
+  border-color: rgba(0, 255, 255, 0.493);
+  border-style: groove;
 }
 
 .box2 
 {
+  padding: 0.5rem; 
   display: flex;
   justify-content: center;
   text-align: start;
-  background-color: rgb(19, 100, 180);
+  background-color: rgba(12, 64, 116, 0.149);
   border: 10px;
-  border-color: blue;
+  border-color: rgba(34, 34, 211, 0.183);
   border-style: groove;
   height: fit-content;
   border-start-end-radius: 50px;
@@ -43,18 +56,18 @@
 
   .lista {
   display: flex;
-  color: aliceblue;
-  justify-content: space-between;
+  color: rgb(232, 110, 57);
+  justify-content: space-between; /*justificar lista de tareas */
   padding: 2px;
+  padding-top: 1rem;
   }
 
   .descripcion{
-    color: cadetblue;
     margin-left: 10px;
     width: fit-content;
+    justify-content: end;
     border-radius: 10px;
-    border-color: aqua;
-    background-color: cornflowerblue;
+    background-color: rgb(96, 138, 168);
     color: oldlace;
     padding: 0.3rem;
   }
@@ -65,7 +78,7 @@
     padding: initial;
     border-color: rgb(110, 194, 26);
     border-style: inset;
-    background-color: darkslategray;
+    background-color: rgb(16, 66, 48);
     justify-content: start;
     }
     
@@ -80,43 +93,34 @@
   justify-content: end;
   }
 .botonesAgregar {
-  width: fit-content;
-  height: fit-content;
+  align-items: center;
+  width: auto;
+  height: auto;
   border-radius: auto;
-  border-width: 3px;
-  border-color: aqua;
+  border-width: 2px;
+  border-color: rgba(0, 255, 255, 0.517);
   will-change: filter;
   background-color: cornflowerblue;
   color: oldlace;
   text-overflow: ellipsis;
-  padding: 0.7rem;
+  padding: 0.1rem;
 }
-
-
-
-
-.OtrasFilas{
-  
-  background-color: rgb(12, 23, 43);
-  height: 330px;
-
-}
-
 
 
   .estadisticas{
+    padding: 1rem; 
     display: flex;
     font-size: 95%;
     font-weight: bold;
     align-items: safe; /*vertical*/
     Font-family: Arial;  
-    background-color:rgb(53, 70, 70);
+    justify-content: space-between;
     color: rgb(241, 203, 119);
     border: 5px;
     border-radius: 10%;
     border-color: rgb(30, 30, 211);
     border-style: groove;
-
+    background-color: rgba(4, 19, 34, 0.543);
   }
 
 
@@ -130,12 +134,59 @@
     padding: 0.3rem;
     font-weight: bold;
   }
-  .view{
-    width:2%;
-  }
 
-  :root {
-    color: #213547;
-    background-color:rgb(12, 23, 43) ;
-  }
  
+
+
+
+/*   //========================== */
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+} */
+
+/* a {
+  font-weight: 500;
+  color: #2029cb;
+  text-decoration: inherit;
+} */
+
+
+/* body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+} */
+
+
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+

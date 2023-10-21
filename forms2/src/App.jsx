@@ -4,8 +4,16 @@ import Title from "./components/Title";
 import { FcPlus, FcCheckmark, FcEmptyTrash } from "react-icons/fc";
 import { Estadisticas } from "./components/Estadisticas";
 import useTareas from "./Hooks/useTareas";
+import { ChakraProvider, CSSReset, Button, Box } from "@chakra-ui/react";
+
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const toggleColorMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+  const colorMode = isDarkMode ? "light" : "dark";
+
   const {
     tareas,
     nuevaTarea,
@@ -37,20 +45,31 @@ function App() {
   }
 
   return (
+    
+    <ChakraProvider resetCSS>
+      <CSSReset />
+      <Box  bg='blue.900' w='100%' p={2} color='white' display='flex' justifyContent='space-between'>
+      Laboratorio: ToDo List con Chakra UI
+      <Button 
+      className="botonesAgregar"
+      onClick={toggleColorMode}> 
+       {colorMode === 'light' ? 'Dark' : 'Light'}
+      </Button>
+      </Box>
+      <Box bg={colorMode === "light" ? "whitesmoke" : "gray.800"} color={colorMode === "light" ? "black" : "white"}>
     <div className="contenedor0">
-      <div></div>
+
       <div className="titulo">
         <Title />
       </div>
-      <div className="OtrasFilas"></div>
-      <div className="OtrasFilas"></div>
+
       <div className="box2">
         <p>
           
           <input
             type="text"
             value={nuevaTarea}
-            size={23}
+            size={22}
             placeholder="Escribe una tarea..."
             onChange={controlarCambioTarea}
             onKeyDown={(event) => {
@@ -62,8 +81,8 @@ function App() {
             <input
             type="text"
             value={nuevaDescripcion}
-            size={27}
-            placeholder="Añade una descripción (opcional)..."
+            size={25}
+            placeholder="Descripción (opcional)..."
             onChange={controlarCambioDescripcion}
           />
           
@@ -109,10 +128,7 @@ function App() {
           ))}
         </p>
       </div>
-
-      <div></div>
-      <div></div>
-
+      <hr/>
       <div>
         <hr />
         <form className="estadisticas">
@@ -134,6 +150,8 @@ function App() {
         </form>
       </div>
     </div>
+    </Box>
+    </ChakraProvider>
   );
 }
 
